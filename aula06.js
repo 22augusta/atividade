@@ -19,25 +19,25 @@ if(maior == "sim"){
                     if (tel.length == 14){
                         console.log("Seu cadatro sera avaliado e informaremos a você por email. Obrigado e Boa sorte")
                     }else if(tel.length != 14){
-                        console.log("Ops!Algo deu errado :(")
+                        console.log("Ops!Algo deu errado :(\n")
                     }
             
                 } 
                 
             } else if(cpf.length != 11){
-                console.log("Ops!Algo deu errado :(")
+                console.log("Ops!Algo deu errado :(\n")
             }
     
         }else if(data.length != 10 ){
-            console.log("Ops!Algo deu errado :(")
+            console.log("Ops!Algo deu errado :( \n")
         }
 
     } 
 } else if (maior == "nao"){
-    console.log("Infelizmente, não poderemos dar continuidade ao seu cadastro")
+    console.log("Infelizmente, não poderemos dar continuidade ao seu cadastro\n")
 }
 else{
-    console.log("Erro 404")
+    console.log("Erro 404\n")
 } 
 }
 cadastro(maior)
@@ -47,13 +47,16 @@ var pergunta = input.question("Quer realizar um novo cadastro?\n")
 function simOuNao(pergunta){
 
     if(pergunta === "sim"){
-        var maior = input.question("voce tem 18 anos ou mais?")
+        var maior = input.question("voce tem 18 anos ou mais?\n")
         cadastro(maior)
-    } else{
-        console.log("Infelizmente, não poderemos dar continuidade ao seu cadastro")
-    }
+    } 
 }
-while (pergunta == "sim"){
+while(pergunta == "sim"){
     simOuNao(pergunta)
     var pergunta = input.question("Quer tentar novamente?\n");
+} 
+while (pergunta == "nao"){
+    simOuNao(pergunta)
+    console.log("compreendo, até mais")
+    break
 }
